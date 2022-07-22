@@ -4,6 +4,7 @@ import './Nav.css'
 
 const Nav = () => {
 const [show, handleShow] = useState(false);
+
   useEffect(()=> {
     window.addEventListener("scroll", ()=> {
       if(window.scrollY > 100) {
@@ -11,7 +12,7 @@ const [show, handleShow] = useState(false);
       } else handleShow(false);
     });
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener("scroll", null);
     };
   }, []);
   
@@ -19,7 +20,7 @@ const [show, handleShow] = useState(false);
     <div className = {`nav ${show && "nav__black"}`}>
       <img 
       className = "nav__logo"
-      src = "./Netflix-logo-on-transparent-background-PNG.png"
+      src = "./netflix-logo.png"
       />
 
 <img 
